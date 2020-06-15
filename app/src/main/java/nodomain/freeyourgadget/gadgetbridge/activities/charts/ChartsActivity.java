@@ -17,75 +17,30 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 package nodomain.freeyourgadget.gadgetbridge.activities.charts;
 
-import android.app.Dialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Objects;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.viewpager.widget.ViewPager;
-import nodomain.freeyourgadget.gadgetbridge.GBApplication;
+
+import java.util.Date;
+
 import nodomain.freeyourgadget.gadgetbridge.R;
 import nodomain.freeyourgadget.gadgetbridge.activities.AbstractFragmentPagerAdapter;
 import nodomain.freeyourgadget.gadgetbridge.activities.AbstractGBFragmentActivity;
-import nodomain.freeyourgadget.gadgetbridge.devices.DeviceCoordinator;
 import nodomain.freeyourgadget.gadgetbridge.impl.GBDevice;
-import nodomain.freeyourgadget.gadgetbridge.model.RecordedDataTypes;
 import nodomain.freeyourgadget.gadgetbridge.util.DateTimeUtils;
-import nodomain.freeyourgadget.gadgetbridge.util.DeviceHelper;
-import nodomain.freeyourgadget.gadgetbridge.util.GB;
 import nodomain.freeyourgadget.gadgetbridge.util.LimitedQueue;
 
 public class ChartsActivity extends AbstractGBFragmentActivity implements ChartsHost {
 
-
     private Date mStartDate;
     private Date mEndDate;
     LimitedQueue mActivityAmountCache = new LimitedQueue(60);
-
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            switch (Objects.requireNonNull(action)) {
-                case GBDevice.ACTION_DEVICE_CHANGED:
-                    GBDevice dev = intent.getParcelableExtra(GBDevice.EXTRA_DEVICE);
-                    refreshBusyState(dev);
-                    break;
-            }
-        }
-    };
     private GBDevice mGBDevice;
-    private ViewGroup dateBar;
-
-    private void refreshBusyState(GBDevice dev) {
-        if (dev.isBusy()) {
-
-        } else {
-
-        }
-        enableSwipeRefresh(true);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +51,6 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
 
         IntentFilter filterLocal = new IntentFilter();
         filterLocal.addAction(GBDevice.ACTION_DEVICE_CHANGED);
-        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, filterLocal);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -105,13 +59,7 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
             throw new IllegalArgumentException("Must provide a device when invoking this activity");
         }
 
-
-        enableSwipeRefresh(true);
-
         // Set up the ViewPager with the sections adapter.
-
-
-
 
 
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -119,14 +67,6 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
         transaction.commit();
 
 
-    }
-
-    private String formatDetailedDuration() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
-        String dateStringFrom = dateFormat.format(getStartDate());
-        String dateStringTo = dateFormat.format(getEndDate());
-
-        return getString(R.string.sleep_activity_date_range, dateStringFrom, dateStringTo);
     }
 
     protected void initDates() {
@@ -159,16 +99,6 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
         return mEndDate;
     }
 
-    private void handleButtonClicked(String Action) {
-        LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(Action));
-    }
-
-    @Override
-    protected void onDestroy() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
-        super.onDestroy();
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -177,24 +107,8 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
         }
     }
 
-
-    private void enableSwipeRefresh(boolean enable) {
-        DeviceCoordinator coordinator = DeviceHelper.getInstance().getCoordinator(mGBDevice);
-
-    }
-
-    private void fetchActivityData() {
-        if (getDevice().isInitialized()) {
-            GBApplication.deviceService().onFetchRecordedData(RecordedDataTypes.TYPE_ACTIVITY);
-        } else {
-
-            GB.toast(this, getString(R.string.device_not_connected), Toast.LENGTH_SHORT, GB.ERROR);
-        }
-    }
-
     @Override
     public void setDateInfo(String dateInfo) {
-
     }
 
     @Override
@@ -204,14 +118,9 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
 
     @Override
     public ViewGroup getDateBar() {
-        return dateBar;
+        return null;
     }
 
-
-    /**
-     * A {@link FragmentStatePagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends AbstractFragmentPagerAdapter {
 
         SectionsPagerAdapter(FragmentManager fm) {
@@ -220,69 +129,17 @@ public class ChartsActivity extends AbstractGBFragmentActivity implements Charts
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            switch (position) {
-                case 0:
-                    return new ActivitySleepChartFragment();
-                case 1:
-                    return new SleepChartFragment();
-                case 2:
-                    return new WeekSleepChartFragment();
-                case 3:
-                    return new WeekStepsChartFragment();
-                case 4:
-                    return new SpeedZonesFragment();
-                case 5:
-                    return new LiveActivityFragment();
-            }
-            return null;
+            return new LiveActivityFragment();
         }
 
         @Override
         public int getCount() {
-            // Show 5 or 6 total pages.
-            DeviceCoordinator coordinator = DeviceHelper.getInstance().getCoordinator(mGBDevice);
-            if (coordinator.supportsRealtimeData()) {
-                return 6;
-            }
-            return 5;
-        }
-
-        private String getSleepTitle() {
-            if (GBApplication.getPrefs().getBoolean("charts_range", true)) {
-                return getString(R.string.weeksleepchart_sleep_a_month);
-            }
-            else{
-                return getString(R.string.weeksleepchart_sleep_a_week);
-            }
-        }
-
-        public String getStepsTitle() {
-            if (GBApplication.getPrefs().getBoolean("charts_range", true)) {
-                return getString(R.string.weekstepschart_steps_a_month);
-            }
-            else{
-                return getString(R.string.weekstepschart_steps_a_week);
-            }
+            return 1;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return getString(R.string.activity_sleepchart_activity_and_sleep);
-                case 1:
-                    return getString(R.string.sleepchart_your_sleep);
-                case 2:
-                    return getSleepTitle();
-                case 3:
-                    return getStepsTitle();
-                case 4:
-                    return getString(R.string.stats_title);
-                case 5:
-                    return getString(R.string.liveactivity_live_activity);
-            }
-            return super.getPageTitle(position);
+            return getString(R.string.liveactivity_live_activity);
         }
     }
 }
