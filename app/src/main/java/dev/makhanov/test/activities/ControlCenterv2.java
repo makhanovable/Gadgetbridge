@@ -177,22 +177,12 @@ public class ControlCenterv2 extends AppCompatActivity
         Prefs prefs = GBApplication.getPrefs();
         if (prefs.getBoolean("firstrun", true)) {
             prefs.getPreferences().edit().putBoolean("firstrun", false).apply();
-            Intent enableIntent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
-            startActivity(enableIntent);
+
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkAndRequestPermissions();
         }
 
-        ChangeLog cl = createChangeLog();
-        if (cl.isFirstRun()) {
-            try {
-                cl.getLogDialog().show();
-            } catch (Exception ignored){
-                GB.toast(getBaseContext(), "Error showing Changelog", Toast.LENGTH_LONG, GB.ERROR);
-
-            }
-        }
 
         GBApplication.deviceService().start();
 
