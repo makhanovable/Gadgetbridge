@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MiBand Test</string>
-    <string name="title_activity_controlcenter">Gadgetbridge</string>
+    <string name="title_activity_controlcenter">MiBand Test</string>
     <string name="action_settings">Settings</string>
     <string name="action_debug">Debug</string>
     <string name="action_quit">Quit</string>
@@ -27,7 +27,7 @@
     <!-- Strings related to Debug Activity -->
     <string name="title_activity_debug">Debug</string>
     <string name="debugactivity_really_factoryreset_title">Really factory reset?</string>
-    <string name="debugactivity_really_factoryreset">Doing a factory reset will delete all data from the connected device (if supported). Xiaomi/Huami devices also change Bluetooth MAC address, so they appear as a new devices to Gadgetbridge.</string>
+    <string name="debugactivity_really_factoryreset">Doing a factory reset will delete all data from the connected device (if supported). Xiaomi/Huami devices also change Bluetooth MAC address, so they appear as a new devices to App.</string>
     <!-- Strings related to AppManager -->
     <string name="title_activity_appmanager">App Manager</string>
     <string name="appmanager_cached_watchapps_watchfaces">Apps in cache</string>
@@ -72,26 +72,26 @@
     <string name="fw_upgrade_notice_miband3">You are about to install the %s firmware on your Mi Band 3.\n\nPlease make sure to install the .fw file, and after that the .res file. Your band will reboot after installing the .fw file.\n\nNote: You do not have to install .res if it is exactly the same as the one previously installed.\n\nPROCEED AT YOUR OWN RISK!</string>
     <string name="fw_upgrade_notice_miband4">You are about to install the %s firmware on your Mi Band 4.\n\nPlease make sure to install the .fw file, and after that the .res file. Your band will reboot after installing the .fw file.\n\nNote: You do not have to install .res if it is exactly the same as the one previously installed.\n\nPROCEED AT YOUR OWN RISK!</string>
     <string name="fw_multi_upgrade_notice">You are about to install the %1$s and %2$s firmware, instead of the ones currently on your Mi Band.</string>
-    <string name="miband_firmware_known">This firmware has been tested and is known to be compatible with Gadgetbridge.</string>
-    <string name="miband_firmware_unknown_warning">"This firmware is untested and may not be compatible with Gadgetbridge.\n\nYou are DISCOURAGED from flashing it!"</string>
-    <string name="miband_firmware_suggest_whitelist">If you still want to proceed and things continue to work properly afterwards, please tell the Gadgetbridge developers to whitelist the %s firmware version.</string>
+    <string name="miband_firmware_known">This firmware has been tested and is known to be compatible with App.</string>
+    <string name="miband_firmware_unknown_warning">"This firmware is untested and may not be compatible with App.\n\nYou are DISCOURAGED from flashing it!"</string>
+    <string name="miband_firmware_suggest_whitelist">If you still want to proceed and things continue to work properly afterwards, please tell the App developers to whitelist the %s firmware version.</string>
     <!-- Strings related to Settings -->
     <string name="title_activity_settings">Settings</string>
     <string name="pref_header_general">General settings</string>
-    <string name="pref_title_general_autoconnectonbluetooth">Connect to Gadgetbridge device when Bluetooth is turned on</string>
+    <string name="pref_title_general_autoconnectonbluetooth">Connect to App device when Bluetooth is turned on</string>
     <string name="pref_title_general_autostartonboot">Start automatically</string>
     <string name="pref_title_general_autoreconnect">Reconnect automatically</string>
     <string name="pref_title_audio_player">Preferred Audioplayer</string>
     <string name="pref_default">Default</string>
     <string name="pref_header_datetime">Date and Time</string>
     <string name="pref_title_datetime_syctimeonconnect">Sync time</string>
-    <string name="pref_summary_datetime_syctimeonconnect">Sync time to Gadgetbridge device when connecting, and when time or time zone changes on Android device</string>
+    <string name="pref_summary_datetime_syctimeonconnect">Sync time to App device when connecting, and when time or time zone changes on Android device</string>
     <string name="pref_title_theme">Theme</string>
     <string name="pref_theme_light">Light</string>
     <string name="pref_theme_dark">Dark</string>
     <string name="pref_theme_system">System</string>
     <string name="pref_title_language">Language</string>
-    <string name="pref_title_minimize_priority">Hide the Gadgetbridge notification</string>
+    <string name="pref_title_minimize_priority">Hide the App notification</string>
     <string name="pref_summary_minimize_priority_off">The icon in the status bar and the notification in the lockscreen are shown</string>
     <string name="pref_summary_minimize_priority_on">The icon in the status bar and the notification in the lockscreen are hidden</string>
     <string name="pref_header_notifications">Notifications</string>
@@ -148,7 +148,7 @@
     <string name="pref_title_enable_calendar_sync">Sync calendar</string>
     <string name="pref_summary_enable_calendar_sync">Send calendar events to the timeline</string>
     <string name="pref_title_custom_deviceicon">Show device specific notification icon</string>
-    <string name="pref_summary_custom_deviceicon">Show a device specific Android notification icon instead the Gadgetbridge icon when connected</string>
+    <string name="pref_summary_custom_deviceicon">Show a device specific Android notification icon instead the App icon when connected</string>
     <string name="pref_title_autoremove_notifications">Autoremove dismissed notifications</string>
     <string name="pref_summary_autoremove_notifications">Notifications are automatically removed from the Pebble when dismissed from the Android device</string>
     <string name="pref_title_pebble_privacy_mode">Privacy mode</string>
@@ -174,13 +174,13 @@
     <string name="pref_title_pebble_enable_applogs">Enable watch app logging</string>
     <string name="pref_title_pebble_gatt_clientonly">GATT client only</string>
     <string name="pref_summary_pebble_gatt_clientonly">This is for Pebble 2 only and experimental, try this if you have connectivity problems</string>
-    <string name="pref_summary_pebble_enable_applogs">Will cause logs from watch apps to be logged by Gadgetbridge (requires reconnect)</string>
+    <string name="pref_summary_pebble_enable_applogs">Will cause logs from watch apps to be logged by App (requires reconnect)</string>
     <string name="pref_title_pebble_always_ack_pebblekit">Prematurely ACK PebbleKit</string>
     <string name="pref_summary_pebble_always_ack_pebblekit">Will cause messages that are sent to external 3rd party apps to be acknowledged always and immediately</string>
     <string name="pref_title_pebble_enable_bgjs">Enable background JS</string>
     <string name="pref_summary_pebble_enable_bgjs">When enabled, allows watchfaces to show weather, battery info etc.</string>
     <string name="pref_title_pebble_reconnect_attempts">Reconnection attempts</string>
-    <string name="pref_summary_expose_hr">Allows other apps to access HR data in realtime while Gadgetbridge is connected</string>
+    <string name="pref_summary_expose_hr">Allows other apps to access HR data in realtime while App is connected</string>
     <string name="pref_title_expose_hr">3rd party realtime HR access</string>
     <string name="pref_title_use_custom_font">Use custom font</string>
     <string name="pref_summary_use_custom_font">Enable this if your device has a custom font firmware for emoji support</string>
@@ -306,7 +306,7 @@
     <string name="_unknown_">(unknown)</string>
     <string name="test">Test</string>
     <string name="test_notification">Test notification</string>
-    <string name="this_is_a_test_notification_from_gadgetbridge">This is a test notification from Gadgetbridge</string>
+    <string name="this_is_a_test_notification_from_gadgetbridge">This is a test notification from App</string>
     <string name="find_my_phone_notification">Find my phone</string>
     <string name="bluetooth_is_not_supported_">Bluetooth is not supported.</string>
     <string name="bluetooth_is_disabled_">Bluetooth is disabled.</string>
@@ -315,7 +315,7 @@
     <string name="tap_connected_device_for_vibration">Tap connected device for vibration</string>
     <string name="tap_a_device_to_connect">Tap a device to connect</string>
     <string name="cannot_connect_bt_address_invalid_">Cannot connect. Bluetooth address invalid?</string>
-    <string name="gadgetbridge_running">Gadgetbridge running</string>
+    <string name="gadgetbridge_running">App running</string>
     <string name="installing_binary_d_d">Installing binary %1$d/%2$d</string>
     <string name="installation_failed_">Installation failed</string>
     <string name="installation_successful">Installed</string>
@@ -350,7 +350,7 @@
     <string name="miband_pairing_using_dummy_userdata">No valid user data given, using dummy user data for now.</string>
     <string name="miband_pairing_tap_hint">When your Mi Band vibrates and blinks, tap it a few times in a row.</string>
     <string name="appinstaller_install">Install</string>
-    <string name="discovery_connected_devices_hint">Make your device discoverable. Currently connected devices will likely not be discovered. Activate location (e.g. GPS) on Android 6+. Disable Privacy Guard for Gadgetbridge, because it may crash and reboot your phone. If no device is found after a few minutes, try again after rebooting your mobile device.</string>
+    <string name="discovery_connected_devices_hint">Make your device discoverable. Currently connected devices will likely not be discovered. Activate location (e.g. GPS) on Android 6+. Disable Privacy Guard for App, because it may crash and reboot your phone. If no device is found after a few minutes, try again after rebooting your mobile device.</string>
     <string name="discovery_need_to_enter_authkey">This device needs a secret auth key, long press on the device to enter it. Read the wiki.</string>
     <string name="discovery_note">Note:</string>
     <string name="candidate_item_device_image">Device image</string>
@@ -399,7 +399,7 @@
     <string name="stats_y_axis_label">Steps per minute</string>
     <string name="control_center_find_lost_device">Find lost device</string>
     <string name="control_center_cancel_to_stop_vibration">Cancel to stop vibration.</string>
-    <string name="title_activity_charts">Activity and Sleep</string>
+    <string name="title_activity_charts">Heart Rate</string>
     <string name="title_activity_set_alarm">Configure alarms</string>
     <string name="controlcenter_start_configure_alarms">Configure alarms</string>
     <string name="title_activity_alarm_details">Alarm details</string>
@@ -512,7 +512,7 @@
     <string name="mi2_prefs_button_press_count_summary">Number of button presses to trigger an Event 1. Subsequent same amount of presses create Event 2 and so on.</string>
     <string name="mi2_prefs_button_press_broadcast">Broadcast message to send</string>
     <string name="mi2_prefs_button_press_broadcast_summary">Broadcast message sent with the event. Parameter `button_id` is added automatically to each message.</string>
-    <string name="mi2_prefs_button_press_broadcast_default_value" translatable="false">nodomain.freeyourgadget.gadgetbridge.ButtonPressed</string>
+    <string name="mi2_prefs_button_press_broadcast_default_value" translatable="false">dev.makhanov.test.ButtonPressed</string>
     <string name="mi2_prefs_button_action">Enable button action</string>
     <string name="mi2_prefs_button_action_summary">Enable action on specified number of button presses</string>
     <string name="mi2_prefs_button_action_vibrate">Enable band vibration</string>
@@ -752,8 +752,8 @@
     <string name="devicetype_makibes_hr3">Makibes HR3</string>
     <string name="devicetype_banglejs">Bangle.js</string>
     <string name="choose_auto_export_location">Choose export location</string>
-    <string name="notification_channel_name">Gadgetbridge notifications</string>
-    <string name="notification_channel_high_priority_name">Gadgetbridge notifications high priority</string>
+    <string name="notification_channel_name">App notifications</string>
+    <string name="notification_channel_high_priority_name">App notifications high priority</string>
     <string name="devicetype_amazfit_gts">Amazfit GTS</string>
     <!-- Menus on the smart device -->
     <string name="menuitem_shortcut_alipay">Alipay (Shortcut)</string>
@@ -787,7 +787,7 @@
     <string name="pref_summary_contextual_arabic">Enable this to support contextual Arabic</string>
     <string name="preferences_rtl_settings">Right To Left Support</string>
     <string name="share_log">Share log</string>
-    <string name="share_log_warning">Please keep in mind Gadgetbridge logs files that may contain lots of personal info, including but not limited to health data, unique identifiers (such as a device\'s MAC address), music preferences, etc. Consider editing the file and removing this info before sending the file to a public issue report.</string>
+    <string name="share_log_warning">Please keep in mind App logs files that may contain lots of personal info, including but not limited to health data, unique identifiers (such as a device\'s MAC address), music preferences, etc. Consider editing the file and removing this info before sending the file to a public issue report.</string>
     <string name="warning">Warning!</string>
     <string name="no_data">No data</string>
     <!-- LED Color -->

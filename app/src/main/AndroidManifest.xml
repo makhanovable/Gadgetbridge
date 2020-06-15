@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nodomain.freeyourgadget.gadgetbridge">
+    package="dev.makhanov.test">
     <!--
         Comment in for testing Pebble Emulator
         <uses-permission android:name="android.permission.INTERNET" />
@@ -22,16 +22,16 @@
         android:required="false" />
 
     <application
-        android:name=".GBApplication"
+        android:name="dev.makhanov.test.GBApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/GadgetbridgeTheme">
-        <activity android:name=".devices.qhybrid.WidgetSettingsActivity"></activity>
+        <activity android:name="dev.makhanov.test.devices.qhybrid.WidgetSettingsActivity"></activity>
         <activity
-            android:name=".activities.ControlCenterv2"
+            android:name="dev.makhanov.test.activities.ControlCenterv2"
             android:label="@string/title_activity_controlcenter"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -43,42 +43,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name="dev.makhanov.test.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".activities.ControlCenterv2" />
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2" />
         <activity
-            android:name=".activities.charts.ChartsPreferencesActivity"
+            android:name="dev.makhanov.test.activities.charts.ChartsPreferencesActivity"
             android:label="@string/activity_prefs_charts"
-            android:parentActivityName=".activities.charts.ChartsPreferencesActivity" />
+            android:parentActivityName="dev.makhanov.test.activities.charts.ChartsPreferencesActivity" />
         <activity
-            android:name=".devices.miband.MiBandPreferencesActivity"
+            android:name="dev.makhanov.test.devices.miband.MiBandPreferencesActivity"
             android:label="@string/preferences_miband_settings"
-            android:parentActivityName=".activities.SettingsActivity" />
+            android:parentActivityName="dev.makhanov.test.activities.SettingsActivity" />
         <activity
-            android:name=".devices.zetime.ZeTimePreferenceActivity"
+            android:name="dev.makhanov.test.devices.zetime.ZeTimePreferenceActivity"
             android:label="@string/zetime_title_settings"
-            android:parentActivityName=".activities.SettingsActivity" />
+            android:parentActivityName="dev.makhanov.test.activities.SettingsActivity" />
         <activity
-            android:name=".activities.ActivitySummariesActivity"
+            android:name="dev.makhanov.test.activities.ActivitySummariesActivity"
             android:label="@string/activity_summaries"
-            android:parentActivityName=".activities.ControlCenterv2" />
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2" />
         <activity
-            android:name=".activities.appmanager.AppManagerActivity"
+            android:name="dev.makhanov.test.activities.appmanager.AppManagerActivity"
             android:label="@string/title_activity_appmanager"
             android:launchMode="singleTop"
-            android:parentActivityName=".activities.ControlCenterv2" />
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2" />
         <activity
-            android:name=".activities.AppBlacklistActivity"
+            android:name="dev.makhanov.test.activities.AppBlacklistActivity"
             android:label="@string/title_activity_appblacklist"
-            android:parentActivityName=".activities.SettingsActivity" />
+            android:parentActivityName="dev.makhanov.test.activities.SettingsActivity" />
         <activity
-            android:name=".activities.CalBlacklistActivity"
+            android:name="dev.makhanov.test.activities.CalBlacklistActivity"
             android:label="@string/title_activity_calblacklist"
-            android:parentActivityName=".activities.SettingsActivity" />
+            android:parentActivityName="dev.makhanov.test.activities.SettingsActivity" />
         <activity
-            android:name=".activities.FwAppInstallerActivity"
+            android:name="dev.makhanov.test.activities.FwAppInstallerActivity"
             android:label="@string/title_activity_fw_app_insaller"
-            android:parentActivityName=".activities.ControlCenterv2">
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -295,32 +295,32 @@
         </activity>
 
         <service
-            android:name=".externalevents.NotificationListener"
+            android:name="dev.makhanov.test.externalevents.NotificationListener"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
-        <service android:name=".service.NotificationCollectorMonitorService" />
-        <service android:name=".service.DeviceCommunicationService" />
+        <service android:name="dev.makhanov.test.service.NotificationCollectorMonitorService" />
+        <service android:name="dev.makhanov.test.service.DeviceCommunicationService" />
 
         <receiver
-            android:name=".externalevents.WeatherNotificationReceiver"
+            android:name="dev.makhanov.test.externalevents.WeatherNotificationReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="ru.gelin.android.weather.notification.ACTION_WEATHER_UPDATE_2" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".externalevents.WeatherNotificationConfig">
+        <activity android:name="dev.makhanov.test.externalevents.WeatherNotificationConfig">
             <intent-filter>
                 <action android:name="ru.gelin.android.weather.notification.ACTION_WEATHER_SKIN_PREFERENCES" />
             </intent-filter>
         </activity>
 
         <receiver
-            android:name=".externalevents.AutoStartReceiver"
+            android:name="dev.makhanov.test.externalevents.AutoStartReceiver"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -329,28 +329,28 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".externalevents.BluetoothStateChangeReceiver"
+            android:name="dev.makhanov.test.externalevents.BluetoothStateChangeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".service.receivers.GBMusicControlReceiver"
+            android:name="dev.makhanov.test.service.receivers.GBMusicControlReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="nodomain.freeyourgadget.gadgetbridge.musiccontrol" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".service.receivers.GBCallControlReceiver"
+            android:name="dev.makhanov.test.service.receivers.GBCallControlReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="nodomain.freeyourgadget.gadgetbridge.callcontrol" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".database.PeriodicExporter"
+            android:name="dev.makhanov.test.database.PeriodicExporter"
             android:enabled="true"
             android:exported="false"></receiver>
         <!--
@@ -358,73 +358,73 @@
             dialog when changing orientation
         -->
         <activity
-            android:name=".activities.DebugActivity"
+            android:name="dev.makhanov.test.activities.DebugActivity"
             android:label="@string/title_activity_debug"
-            android:parentActivityName=".activities.ControlCenterv2"
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activities.DbManagementActivity"
+            android:name="dev.makhanov.test.activities.DbManagementActivity"
             android:label="@string/title_activity_db_management"
-            android:parentActivityName=".activities.ControlCenterv2"
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activities.DiscoveryActivity"
+            android:name="dev.makhanov.test.activities.DiscoveryActivity"
             android:label="@string/title_activity_discovery"
-            android:parentActivityName=".activities.ControlCenterv2" />
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2" />
         <activity
-            android:name=".activities.AndroidPairingActivity"
+            android:name="dev.makhanov.test.activities.AndroidPairingActivity"
             android:label="@string/title_activity_android_pairing" />
         <activity
-            android:name=".devices.miband.MiBandPairingActivity"
+            android:name="dev.makhanov.test.devices.miband.MiBandPairingActivity"
             android:label="@string/title_activity_mi_band_pairing" />
         <activity
-            android:name=".devices.pebble.PebblePairingActivity"
+            android:name="dev.makhanov.test.devices.pebble.PebblePairingActivity"
             android:label="@string/title_activity_pebble_pairing" />
         <activity
-            android:name=".devices.watch9.Watch9PairingActivity"
+            android:name="dev.makhanov.test.devices.watch9.Watch9PairingActivity"
             android:label="@string/title_activity_watch9_pairing" />
         <activity
-            android:name=".devices.watch9.Watch9CalibrationActivity"
+            android:name="dev.makhanov.test.devices.watch9.Watch9CalibrationActivity"
             android:label="@string/title_activity_watch9_calibration" />
         <activity
-            android:name=".devices.lenovo.LenovoWatchPairingActivity"
+            android:name="dev.makhanov.test.devices.lenovo.LenovoWatchPairingActivity"
             android:label="@string/title_activity_watch9_pairing"  />
         <activity
-            android:name=".devices.lenovo.LenovoWatchCalibrationActivity"
+            android:name="dev.makhanov.test.devices.lenovo.LenovoWatchCalibrationActivity"
             android:label="@string/title_activity_LenovoWatch_calibration"  />
         <activity
-            android:name=".activities.charts.ChartsActivity"
+            android:name="dev.makhanov.test.activities.charts.ChartsActivity"
             android:label="@string/title_activity_charts"
-            android:parentActivityName=".activities.ControlCenterv2" />
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2" />
         <activity
-            android:name=".activities.ConfigureAlarms"
+            android:name="dev.makhanov.test.activities.ConfigureAlarms"
             android:label="@string/title_activity_set_alarm"
-            android:parentActivityName=".activities.ControlCenterv2" />
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2" />
         <activity
-            android:name=".activities.devicesettings.DeviceSettingsActivity"
+            android:name="dev.makhanov.test.activities.devicesettings.DeviceSettingsActivity"
             android:label="@string/title_activity_device_specific_settings" />
         <activity
-            android:name=".activities.AlarmDetails"
+            android:name="dev.makhanov.test.activities.AlarmDetails"
             android:label="@string/title_activity_alarm_details"
-            android:parentActivityName=".activities.ConfigureAlarms"
+            android:parentActivityName="dev.makhanov.test.activities.ConfigureAlarms"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.VibrationActivity"
+            android:name="dev.makhanov.test.activities.VibrationActivity"
             android:label="@string/title_activity_vibration"
-            android:parentActivityName=".activities.ControlCenterv2" />
+            android:parentActivityName="dev.makhanov.test.activities.ControlCenterv2" />
         <activity
-            android:name=".activities.NotificationFilterActivity"
+            android:name="dev.makhanov.test.activities.NotificationFilterActivity"
             android:label="@string/title_activity_notification_filter"
-            android:parentActivityName=".activities.AppBlacklistActivity"
+            android:parentActivityName="dev.makhanov.test.activities.AppBlacklistActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
-            android:name=".activities.FindPhoneActivity"
+            android:name="dev.makhanov.test.activities.FindPhoneActivity"
             android:label="Find Phone" />
 
         <provider
-            android:name=".contentprovider.PebbleContentProvider"
+            android:name="dev.makhanov.test.contentprovider.PebbleContentProvider"
             android:authorities="com.getpebble.android.provider"
             android:exported="true" />
         <provider
@@ -438,7 +438,7 @@
         </provider>
 
         <receiver
-            android:name=".SleepAlarmWidget"
+            android:name="dev.makhanov.test.SleepAlarmWidget"
             android:label="@string/appwidget_sleep_alarm_widget_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -450,7 +450,7 @@
                 android:resource="@xml/sleep_alarm_widget_info" />
         </receiver>
         <receiver
-            android:name=".Widget"
+            android:name="dev.makhanov.test.Widget"
             android:label="@string/widget_listing_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -463,20 +463,20 @@
         </receiver>
 
         <activity
-            android:name=".activities.WidgetAlarmsActivity"
+            android:name="dev.makhanov.test.activities.WidgetAlarmsActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
-            android:name=".activities.ExternalPebbleJSActivity"
+            android:name="dev.makhanov.test.activities.ExternalPebbleJSActivity"
             android:allowTaskReparenting="true"
             android:clearTaskOnLaunch="true"
             android:label="@string/app_configure"
             android:launchMode="singleTask"
-            android:parentActivityName=".activities.appmanager.AppManagerActivity">
+            android:parentActivityName="dev.makhanov.test.activities.appmanager.AppManagerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2" />
+                android:value="dev.makhanov.test.activities.ControlCenterv2" />
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -488,16 +488,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".devices.qhybrid.ConfigActivity"
+            android:name="dev.makhanov.test.devices.qhybrid.ConfigActivity"
             android:exported="true" />
         <activity
-            android:name=".devices.qhybrid.QHybridAppChoserActivity"
+            android:name="dev.makhanov.test.devices.qhybrid.QHybridAppChoserActivity"
             android:exported="true" />
         <activity
-            android:name=".devices.qhybrid.HRConfigActivity"
+            android:name="dev.makhanov.test.devices.qhybrid.HRConfigActivity"
             android:exported="true" />
         <activity
-            android:name=".devices.qhybrid.ImageEditActivity"
+            android:name="dev.makhanov.test.devices.qhybrid.ImageEditActivity"
             android:exported="true" />
     </application>
 

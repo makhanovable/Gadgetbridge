@@ -20,13 +20,13 @@ android {
     buildToolsVersion '29.0.2'
 
     defaultConfig {
-        applicationId "nodomain.freeyourgadget.gadgetbridge"
-        minSdkVersion 19
+        applicationId "dev.makhanov.test"
+        minSdkVersion 21
         targetSdkVersion 28
 
         // Note: always bump BOTH versionCode and versionName!
-        versionName "0.44.2"
-        versionCode 175
+        versionName "1.0"
+        versionCode 1
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {

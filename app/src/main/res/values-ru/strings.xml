@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Gadgetbridge</string>
-    <string name="title_activity_controlcenter">Gadgetbridge</string>
+    <string name="app_name">MiBand Test</string>
+    <string name="title_activity_controlcenter">MiBand Test</string>
     <string name="action_settings">Настройки</string>
     <string name="action_debug">Отладка</string>
     <string name="action_quit">Выйти</string>
@@ -44,11 +44,11 @@
     <string name="title_activity_fw_app_insaller">Установка прошивки и приложений</string>
     <string name="fw_upgrade_notice">Вы собираетесь установить прошивку %s.</string>
     <string name="fw_multi_upgrade_notice">Вы собираетесь установить прошивки %1$s и %2$s вместо текущей на вашем Mi Band.</string>
-    <string name="miband_firmware_known">Эта прошивка была проверена: она совместима с Gadgetbridge.</string>
-    <string name="miband_firmware_unknown_warning">Эта прошивка не протестирована и может быть несовместима с Gadgetbridge.
+    <string name="miband_firmware_known">Эта прошивка была проверена: она совместима с App.</string>
+    <string name="miband_firmware_unknown_warning">Эта прошивка не протестирована и может быть несовместима с MiBand Test.
 \n
 \nНЕ РЕКОМЕНДУЕТСЯ устанавливать её!</string>
-    <string name="miband_firmware_suggest_whitelist">Если вы установите эту прошивку и убедитесь, что всё работает без сбоев, пожалуйста, сообщите об этом разработчикам Gadgetbridge. Они пометят эту версию прошивки (%s) как совместимую.</string>
+    <string name="miband_firmware_suggest_whitelist">Если вы установите эту прошивку и убедитесь, что всё работает без сбоев, пожалуйста, сообщите об этом разработчикам App. Они пометят эту версию прошивки (%s) как совместимую.</string>
     <!--Strings related to Settings-->
     <string name="title_activity_settings">Настройки</string>
     <string name="pref_header_general">Общие</string>
@@ -64,7 +64,7 @@
     <string name="pref_theme_light">Светлая</string>
     <string name="pref_theme_dark">Тёмная</string>
     <string name="pref_title_language">Язык</string>
-    <string name="pref_title_minimize_priority">Скрывать уведомление Gadgetbridge</string>
+    <string name="pref_title_minimize_priority">Скрывать уведомление MiBand Test</string>
     <string name="pref_summary_minimize_priority_off">Показывает значок в строке состояния и уведомление на экране блокировки</string>
     <string name="pref_summary_minimize_priority_on">Не показывает значок в строке состояния и уведомление на экране блокировки</string>
     <string name="pref_header_notifications">Уведомления</string>
@@ -133,7 +133,7 @@
     <string name="pref_title_pebble_mtu_limit">Ограничение GATT MTU для Pebble 2/LE</string>
     <string name="pref_summary_pebble_mtu_limit">Если ваш Pebble 2/Pebble LE работает некорректно, попробуйте при помощи данной настройки ограничить MTU (допустимый диапазон от 20 до 512)</string>
     <string name="pref_title_pebble_enable_applogs">Включить ведение логов приложений</string>
-    <string name="pref_summary_pebble_enable_applogs">Логи приложений будут вестись в Gadgetbridge (требуется переподключение)</string>
+    <string name="pref_summary_pebble_enable_applogs">Логи приложений будут вестись в App (требуется переподключение)</string>
     <string name="pref_title_pebble_always_ack_pebblekit">Преждевременное ACK PebbleKit</string>
     <string name="pref_summary_pebble_always_ack_pebblekit">Сообщения, отправляемые внешним сторонним приложениям, будут всегда и немедленно разрешены</string>
     <string name="pref_title_pebble_reconnect_attempts">Попытки переподключения</string>
@@ -149,7 +149,7 @@
     <string name="_unknown_">(неизвестно)</string>
     <string name="test">Тест</string>
     <string name="test_notification">Тестовое уведомлений</string>
-    <string name="this_is_a_test_notification_from_gadgetbridge">Это тестовое уведомление от Gadgetbridge</string>
+    <string name="this_is_a_test_notification_from_gadgetbridge">Это тестовое уведомление от App</string>
     <string name="bluetooth_is_not_supported_">Bluetooth не поддерживается.</string>
     <string name="bluetooth_is_disabled_">Bluetooth отключён.</string>
     <string name="tap_connected_device_for_app_mananger">Коснитесь подключённого устройства для вызова Управления приложениями</string>
@@ -157,7 +157,7 @@
     <string name="tap_connected_device_for_vibration">Коснитесь подключённого устройства для Вибрации</string>
     <string name="tap_a_device_to_connect">Коснитесь устройства для соединения</string>
     <string name="cannot_connect_bt_address_invalid_">Не удалось соединиться. Невереный адрес Bluetooth?</string>
-    <string name="gadgetbridge_running">Gadgetbridge запущен</string>
+    <string name="gadgetbridge_running">MiBand Test запущен</string>
     <string name="installing_binary_d_d">установка бинарного файла %1$d/%2$d</string>
     <string name="installation_failed_">Установка не удалась</string>
     <string name="installation_successful">Установлено</string>
@@ -168,7 +168,7 @@
     <string name="appversion_by_creator">%1$s от %2$s</string>
     <string name="title_activity_discovery">Поиск устройства</string>
     <string name="discovery_stop_scanning">Остановить поиск устройств</string>
-    <string name="discovery_start_scanning">Умный поиск</string>
+    <string name="discovery_start_scanning">поиск</string>
     <string name="action_discover">Подключиться к новому устройству</string>
     <string name="device_with_rssi">%1$s (%2$s)</string>
     <string name="title_activity_android_pairing">Сопряжение устройств</string>
@@ -190,7 +190,7 @@
     <string name="miband_pairing_using_dummy_userdata">Не предоставлено действительных данных пользователя. Используются данные по-умолчанию.</string>
     <string name="miband_pairing_tap_hint">Когда ваш Mi Band вибрирует и мигает, постучите по нему несколько раз.</string>
     <string name="appinstaller_install">Установить</string>
-    <string name="discovery_connected_devices_hint">Сделайте свое устройство видимым. В настоящее время подключенные устройства, скорее всего, не будут обнаружены. Активируйте местоположение (например, GPS) на Android 6+. Отключите Privacy Guard для Gadgetbridge, так как это может привести к сбою и перезагрузке вашего телефона. Если через несколько минут устройство не обнаружено, повторите попытку после перезагрузки мобильного устройства.</string>
+    <string name="discovery_connected_devices_hint">Сделайте свое устройство видимым. В настоящее время подключенные устройства, скорее всего, не будут обнаружены. Активируйте местоположение (например, GPS) на Android 6+. Отключите Privacy Guard для App, так как это может привести к сбою и перезагрузке вашего телефона. Если через несколько минут устройство не обнаружено, повторите попытку после перезагрузки мобильного устройства.</string>
     <string name="discovery_note">Заметка:</string>
     <string name="candidate_item_device_image">Изображение устройства</string>
     <string name="miband_prefs_alias">Имя/псевдоним</string>
@@ -221,7 +221,7 @@
     <string name="pref_screen_notification_profile_generic_social">Социальные сети</string>
     <string name="control_center_find_lost_device">Поиск потерянного устройства</string>
     <string name="control_center_cancel_to_stop_vibration">Отмените, чтобы прекратить вибрацию.</string>
-    <string name="title_activity_charts">Активность и сон</string>
+    <string name="title_activity_charts">Сердцебиение</string>
     <string name="title_activity_set_alarm">Завести Будильник</string>
     <string name="controlcenter_start_configure_alarms">Настроить будильники</string>
     <string name="title_activity_alarm_details">Настройки будильника</string>
@@ -545,7 +545,7 @@
     <string name="devicetype_no1_f1">No.1 F1</string>
     <string name="devicetype_id115">ID115</string>
     <string name="choose_auto_export_location">Куда сохранять данные при экспорте</string>
-    <string name="notification_channel_name">Уведомления Gadgetbridge</string>
+    <string name="notification_channel_name">Уведомления App</string>
     <string name="menuitem_activity">Активность</string>
     <string name="menuitem_notifications">Уведомления</string>
     <string name="menuitem_more">Ещё</string>
@@ -570,7 +570,7 @@
     <string name="japanese">Японский язык</string>
     <string name="norwegian_bokmal">Норвежский (литературный)</string>
     <string name="share_log">Поделиться лог-файлом</string>
-    <string name="share_log_warning">Файлы журнала (log-файлы) Gadgetbridge могут содержать различную личную информацию, такую как уникальные идентификаторы (например, MAC-адрес устройства), информацию о музыкальных предпочтениях и т.д. Рекомендуется редактирование файла журнала и удаление личной информации перед отправкой в публичном отчете о проблеме.</string>
+    <string name="share_log_warning">Файлы журнала (log-файлы) App могут содержать различную личную информацию, такую как уникальные идентификаторы (например, MAC-адрес устройства), информацию о музыкальных предпочтениях и т.д. Рекомендуется редактирование файла журнала и удаление личной информации перед отправкой в публичном отчете о проблеме.</string>
     <string name="warning">Внимание!</string>
     <string name="no_data">Нет данных</string>
     <string name="pref_title_notifications_timeout">Минимальный интервал между уведомлениями</string>
@@ -619,8 +619,8 @@
     <string name="filter_mode">Режим фильтрации</string>
     <string name="save_configuration">Сохранить конфигурацию</string>
     <string name="appwidget_not_connected">Не подключено, будильник не установлено.</string>
-    <string name="mi2_prefs_button_press_broadcast_default_value" translatable="false">nodomain.freeyourgadget.gadgetbridge.ButtonPressed</string>
-    <string name="debugactivity_really_factoryreset">Сброс настроек удалит все данные с этого устройства (если поддерживается). Устройства Xiaomi и Huami поменяют MAC-адрес Bluetooth, поэтому в Gadgetbridge они отображаются как новые устройства.</string>
+    <string name="mi2_prefs_button_press_broadcast_default_value" translatable="false">dev.makhanov.test.ButtonPressed</string>
+    <string name="debugactivity_really_factoryreset">Сброс настроек удалит все данные с этого устройства (если поддерживается). Устройства Xiaomi и Huami поменяют MAC-адрес Bluetooth, поэтому в App они отображаются как новые устройства.</string>
     <string name="zetime_date_format_1">ГГ/ММ/ДД</string>
     <string name="zetime_date_format_2">ДД/ММ/ГГ</string>
     <string name="zetime_date_format_3">ММ/ДД/ГГ</string>
@@ -636,7 +636,7 @@
     <string name="pref_screen_notification_profile_inactivity">Уведомления о бездействии</string>
     <string name="pref_screen_notification_profile_low_power">Предупреждение о низком заряде</string>
     <string name="average">В среднем: %1$s</string>
-    <string name="pref_summary_expose_hr">Разрешает другим приложениям доступ к датчику сердцебиения при активном соединении через Gadgetbridge</string>
+    <string name="pref_summary_expose_hr">Разрешает другим приложениям доступ к датчику сердцебиения при активном соединении через App</string>
     <string name="pref_title_expose_hr">Доступ к пульсометру</string>
     <string name="pref_display_add_device_fab">Кнопка подключения нового устройства</string>
     <string name="pref_display_add_device_fab_on">Всегда отображать</string>
@@ -827,6 +827,6 @@
     <string name="pref_title_sync_caldendar">Синхронизировать события в календаре</string>
     <string name="find_my_phone_notification">Найти телефон</string>
     <string name="pref_title_custom_deviceicon">Показывать собственную иконку устройства</string>
-    <string name="pref_summary_custom_deviceicon">При подключении показывать в уведомлении собственную иконку устройства вместо иконки Gadgetbridge</string>
+    <string name="pref_summary_custom_deviceicon">При подключении показывать в уведомлении собственную иконку устройства вместо иконки App</string>
     <string name="pref_theme_system">Системная</string>
 </resources>
