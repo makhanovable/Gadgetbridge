@@ -272,44 +272,8 @@ public class ControlCenterv2 extends AppCompatActivity
             wantedPermissions.add(Manifest.permission.BLUETOOTH);
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_ADMIN) == PackageManager.PERMISSION_DENIED)
             wantedPermissions.add(Manifest.permission.BLUETOOTH_ADMIN);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.READ_CONTACTS);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.CALL_PHONE);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ANSWER_PHONE_CALLS) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.ANSWER_PHONE_CALLS);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.READ_CALL_LOG);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.READ_PHONE_STATE);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.PROCESS_OUTGOING_CALLS) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.PROCESS_OUTGOING_CALLS);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.RECEIVE_SMS);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.READ_SMS);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.SEND_SMS);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_DENIED)
-            wantedPermissions.add(Manifest.permission.READ_CALENDAR);
-        try {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.MEDIA_CONTENT_CONTROL) == PackageManager.PERMISSION_DENIED)
-                wantedPermissions.add(Manifest.permission.MEDIA_CONTENT_CONTROL);
-        } catch (Exception ignored){
-        }
-
         if (!wantedPermissions.isEmpty())
             ActivityCompat.requestPermissions(this, wantedPermissions.toArray(new String[0]), 0);
-
-        // HACK: On Lineage we have to do this so that the permission dialog pops up
-        if (fakeStateListener == null) {
-            fakeStateListener = new PhoneStateListener();
-            TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-            telephonyManager.listen(fakeStateListener, PhoneStateListener.LISTEN_CALL_STATE);
-            telephonyManager.listen(fakeStateListener, PhoneStateListener.LISTEN_NONE);
-        }
     }
 
     public void setLanguage(Locale language, boolean invalidateLanguage) {
