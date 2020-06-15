@@ -66,7 +66,7 @@ import nodomain.freeyourgadget.gadgetbridge.util.Prefs;
 
 //TODO: extend AbstractGBActivity, but it requires actionbar that is not available
 public class ControlCenterv2 extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, GBActivity {
+        implements GBActivity {
 
     //needed for KK compatibility
     static {
@@ -111,15 +111,6 @@ public class ControlCenterv2 extends AppCompatActivity
         setContentView(R.layout.activity_controlcenterv2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.controlcenter_navigation_drawer_open, R.string.controlcenter_navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         //end of material design boilerplate
         deviceManager = ((GBApplication) getApplication()).getDeviceManager();
@@ -237,69 +228,11 @@ public class ControlCenterv2 extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == MENU_REFRESH_CODE) {
             showFabIfNeccessary();
         }
-    }
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                Intent settingsIntent = new Intent(this, SettingsActivity.class);
-                startActivityForResult(settingsIntent, MENU_REFRESH_CODE);
-                return true;
-            case R.id.action_debug:
-                Intent debugIntent = new Intent(this, DebugActivity.class);
-                startActivity(debugIntent);
-                return true;
-            case R.id.action_db_management:
-                Intent dbIntent = new Intent(this, DbManagementActivity.class);
-                startActivity(dbIntent);
-                return true;
-            case R.id.action_blacklist:
-                Intent blIntent = new Intent(this, AppBlacklistActivity.class);
-                startActivity(blIntent);
-                return true;
-            case R.id.device_action_discover:
-                launchDiscoveryActivity();
-                return true;
-            case R.id.action_quit:
-                GBApplication.quit();
-                return true;
-            case R.id.donation_link:
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://liberapay.com/Gadgetbridge")); //TODO: centralize if ever used somewhere else
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
-                return true;
-            case R.id.external_changelog:
-                ChangeLog cl = createChangeLog();
-                try {
-                    cl.getLogDialog().show();
-                } catch (Exception ignored) {
-                    GB.toast(getBaseContext(), "Error showing Changelog", Toast.LENGTH_LONG, GB.ERROR);
-                }
-                return true;
-        }
-
-        return true;
     }
 
     private ChangeLog createChangeLog() {
