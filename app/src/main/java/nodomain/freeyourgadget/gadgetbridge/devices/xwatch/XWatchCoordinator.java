@@ -40,7 +40,7 @@ public class XWatchCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.startsWith("XWatch")) {
-            return DeviceType.XWATCH;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
@@ -52,7 +52,7 @@ public class XWatchCoordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.XWATCH;
+        return DeviceType.UNKNOWN;
     }
 
     @Nullable

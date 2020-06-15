@@ -44,13 +44,13 @@ public class CasioGB6900DeviceCoordinator extends AbstractDeviceCoordinator {
     @Override
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         if (candidate.supportsService(CasioGB6900Constants.CASIO_VIRTUAL_SERVER_SERVICE)) {
-            return DeviceType.CASIOGB6900;
+            return DeviceType.UNKNOWN;
         }
 
         String name = candidate.getDevice().getName();
         if (name != null) {
             if (name.startsWith("CASIO")) {
-                return DeviceType.CASIOGB6900;
+                return DeviceType.UNKNOWN;
             }
         }
 
@@ -84,7 +84,7 @@ public class CasioGB6900DeviceCoordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.CASIOGB6900;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

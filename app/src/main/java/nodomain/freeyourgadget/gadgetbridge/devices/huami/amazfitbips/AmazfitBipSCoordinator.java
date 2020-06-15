@@ -38,7 +38,7 @@ public class AmazfitBipSCoordinator extends HuamiCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.AMAZFITBIPS;
+        return DeviceType.UNKNOWN;
     }
 
     @NonNull
@@ -48,7 +48,7 @@ public class AmazfitBipSCoordinator extends HuamiCoordinator {
             BluetoothDevice device = candidate.getDevice();
             String name = device.getName();
             if (name != null && (name.equalsIgnoreCase("Amazfit Bip S"))) {
-                return DeviceType.AMAZFITBIPS;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);

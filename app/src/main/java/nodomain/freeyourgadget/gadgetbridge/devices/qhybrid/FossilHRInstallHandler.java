@@ -84,7 +84,7 @@ public class FossilHRInstallHandler implements InstallHandler {
             installActivity.setInstallEnabled(false);
             return;
         }
-        if (device.getType() != DeviceType.FOSSILQHYBRID || !device.isConnected()) {
+        if (!device.isConnected()) {
             installActivity.setInfoText("Element cannot be installed");
             installActivity.setInstallEnabled(false);
             return;

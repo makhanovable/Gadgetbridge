@@ -38,7 +38,7 @@ public class AmazfitCorCoordinator extends HuamiCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.AMAZFITCOR;
+        return DeviceType.UNKNOWN;
     }
 
     @NonNull
@@ -48,7 +48,7 @@ public class AmazfitCorCoordinator extends HuamiCoordinator {
             BluetoothDevice device = candidate.getDevice();
             String name = device.getName();
             if (name != null && (name.equalsIgnoreCase("Amazfit Band") || name.equalsIgnoreCase("Amazfit Cor"))) {
-                return DeviceType.AMAZFITCOR;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);

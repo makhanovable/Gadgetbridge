@@ -59,7 +59,7 @@ public class No1F1Coordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && (name.startsWith("X-RUN") || name.startsWith("MH30"))) {
-            return DeviceType.NO1F1;
+            return DeviceType.UNKNOWN;
         }
 
         return DeviceType.UNKNOWN;
@@ -67,7 +67,7 @@ public class No1F1Coordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.NO1F1;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

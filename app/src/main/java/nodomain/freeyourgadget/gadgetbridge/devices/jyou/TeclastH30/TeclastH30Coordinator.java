@@ -66,17 +66,17 @@ public class TeclastH30Coordinator extends AbstractDeviceCoordinator {
     @Override
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         if (candidate.supportsService(JYouConstants.UUID_SERVICE_JYOU)) {
-            return DeviceType.TECLASTH30;
+            return DeviceType.UNKNOWN;
         }
 
         String name = candidate.getDevice().getName();
         if (name != null) {
             if (name.startsWith("TECLAST_H30") || name.startsWith("TECLAST_H10")) {
-                return DeviceType.TECLASTH30;
+                return DeviceType.UNKNOWN;
             }
             Matcher deviceNameMatcher = deviceNamePattern.matcher(name);
             if (deviceNameMatcher.matches()) {
-                return DeviceType.TECLASTH30;
+                return DeviceType.UNKNOWN;
             }
         }
         return DeviceType.UNKNOWN;
@@ -109,7 +109,7 @@ public class TeclastH30Coordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.TECLASTH30;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

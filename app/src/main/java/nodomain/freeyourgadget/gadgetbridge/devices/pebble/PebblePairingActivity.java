@@ -219,7 +219,7 @@ public class PebblePairingActivity extends AbstractGBActivity {
 
     private void performConnect(GBDevice gbDevice) {
         if (gbDevice == null) {
-            gbDevice = new GBDevice(mBtDevice.getAddress(), mBtDevice.getName(), null, DeviceType.PEBBLE);
+            gbDevice = new GBDevice(mBtDevice.getAddress(), mBtDevice.getName(), null, DeviceType.UNKNOWN);
         }
         GBApplication.deviceService().connect(gbDevice);
     }

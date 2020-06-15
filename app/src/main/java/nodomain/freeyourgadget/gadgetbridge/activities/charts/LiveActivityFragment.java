@@ -242,46 +242,6 @@ public class LiveActivityFragment extends AbstractChartFragment {
         super.onDestroyView();
     }
 
-    private BarDataSet setupCommonChart(CustomBarChart chart, BarEntry entry, String title) {
-        chart.setSinglAnimationEntry(entry);
-
-//        chart.getXAxis().setPosition(XAxis.XAxisPosition.TOP);
-        chart.getXAxis().setDrawLabels(false);
-        chart.getXAxis().setEnabled(false);
-        chart.getXAxis().setTextColor(CHART_TEXT_COLOR);
-        chart.getAxisLeft().setTextColor(CHART_TEXT_COLOR);
-
-        chart.setBackgroundColor(BACKGROUND_COLOR);
-        chart.getDescription().setTextColor(DESCRIPTION_COLOR);
-        chart.getDescription().setText(title);
-//        chart.setNoDataTextDescription("");
-        chart.setNoDataText("");
-        chart.getAxisRight().setEnabled(false);
-
-        List<BarEntry> entries = new ArrayList<>();
-        List<Integer> colors = new ArrayList<>();
-
-        entries.add(entry);
-        colors.add(akActivity.color);
-        colors.add(akActivity.color);
-        colors.add(akActivity.color);
-//        //we don't want labels
-//        xLabels.add("");
-//        xLabels.add("");
-//        xLabels.add("");
-
-        BarDataSet set = new BarDataSet(entries, "");
-        set.setDrawValues(false);
-        set.setColors(colors);
-        BarData data = new BarData(set);
-//        data.setGroupSpace(0);
-        chart.setData(data);
-
-        chart.getLegend().setEnabled(false);
-
-        return set;
-    }
-
     @Override
     public String getTitle() {
         return getContext().getString(R.string.liveactivity_live_activity);

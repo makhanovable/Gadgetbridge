@@ -39,14 +39,14 @@ public class MijiaLywsd02Coordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.equals("LYWSD02")) {
-            return DeviceType.MIJIA_LYWSD02;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.MIJIA_LYWSD02;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

@@ -44,7 +44,7 @@ public class BangleJSCoordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.BANGLEJS;
+        return DeviceType.UNKNOWN;
     }
 
     @Override
@@ -75,7 +75,7 @@ public class BangleJSCoordinator extends AbstractDeviceCoordinator {
               name.startsWith("Puck.js") ||
               name.startsWith("MDBT42Q") ||
               name.startsWith("Espruino"))) 
-            return DeviceType.BANGLEJS;
+            return DeviceType.UNKNOWN;
 
         return DeviceType.UNKNOWN;
     }

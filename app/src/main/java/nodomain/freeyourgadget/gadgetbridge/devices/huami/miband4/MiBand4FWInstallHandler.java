@@ -45,6 +45,6 @@ class MiBand4FWInstallHandler extends AbstractMiBandFWInstallHandler {
 
     @Override
     protected boolean isSupportedDeviceType(GBDevice device) {
-        return device.getType() == DeviceType.MIBAND4;
+        return false;
     }
 }

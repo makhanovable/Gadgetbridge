@@ -35,7 +35,7 @@ public class Q8Coordinator extends HPlusCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if(name != null && name.startsWith("Q8")){
-            return DeviceType.Q8;
+            return DeviceType.UNKNOWN;
         }
 
         return DeviceType.UNKNOWN;
@@ -43,7 +43,7 @@ public class Q8Coordinator extends HPlusCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.Q8;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

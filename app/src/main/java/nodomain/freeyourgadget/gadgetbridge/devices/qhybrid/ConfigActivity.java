@@ -308,7 +308,7 @@ public class ConfigActivity extends AbstractGBActivity {
         });
 
         device = GBApplication.app().getDeviceManager().getSelectedDevice();
-        if (device == null || device.getType() != DeviceType.FOSSILQHYBRID || device.getFirmwareVersion().charAt(2) != '0') {
+        if (device == null || device.getFirmwareVersion().charAt(2) != '0') {
             setSettingsError(getString(R.string.watch_not_connected));
         } else {
             updateSettings();

@@ -1876,9 +1876,6 @@ public class HuamiSupport extends AbstractBTLEDeviceSupport {
         boolean supportsConditionString = true;
 
         Version version = new Version(gbDevice.getFirmwareVersion());
-        if (gbDevice.getType() == DeviceType.AMAZFITBIP && version.compareTo(new Version("0.0.8.74")) < 0) {
-            supportsConditionString = false;
-        }
 
         MiBandConst.DistanceUnit unit = HuamiCoordinator.getDistanceUnit();
         int tz_offset_hours = SimpleTimeZone.getDefault().getOffset(weatherSpec.timestamp * 1000L) / (1000 * 60 * 60);
@@ -2368,12 +2365,8 @@ public class HuamiSupport extends AbstractBTLEDeviceSupport {
         builder.add(new ConditionalWriteAction(getCharacteristic(HuamiService.UUID_CHARACTERISTIC_3_CONFIGURATION)) {
             @Override
             protected byte[] checkCondition() {
-                if ((gbDevice.getType() == DeviceType.AMAZFITBIP && new Version(gbDevice.getFirmwareVersion()).compareTo(new Version("0.1.0.77")) < 0) ||
-                        (gbDevice.getType() == DeviceType.AMAZFITCOR && new Version(gbDevice.getFirmwareVersion()).compareTo(new Version("1.0.7.23")) < 0)) {
-                    return finalCommand_old;
-                } else {
+
                     return command_new;
-                }
             }
         });
 

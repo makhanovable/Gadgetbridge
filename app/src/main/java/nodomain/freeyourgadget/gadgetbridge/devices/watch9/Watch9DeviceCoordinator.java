@@ -62,20 +62,20 @@ public class Watch9DeviceCoordinator extends AbstractDeviceCoordinator {
         String macAddress = candidate.getMacAddress().toUpperCase();
         String deviceName = candidate.getName().toUpperCase();
         if (candidate.supportsService(Watch9Constants.UUID_SERVICE_WATCH9)) {
-            return DeviceType.WATCH9;
+            return DeviceType.UNKNOWN;
             // add support for Watch X non-plus (same MAC address)
             // add support for Watch X Plus (same MAC address)
         } else if ((macAddress.startsWith("1C:87:79")) && ((!deviceName.equalsIgnoreCase("WATCH X")) && (!deviceName.equalsIgnoreCase("WATCH XPLUS")))) {
-            return DeviceType.WATCH9;
+            return DeviceType.UNKNOWN;
         } else if (deviceName.equals("WATCH 9")) {
-            return DeviceType.WATCH9;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.WATCH9;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

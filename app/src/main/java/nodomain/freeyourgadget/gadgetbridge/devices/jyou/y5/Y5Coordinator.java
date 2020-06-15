@@ -52,7 +52,7 @@ public class Y5Coordinator extends AbstractDeviceCoordinator {
             String name = candidate.getDevice().getName();
             if (name != null) {
                 if (name.contains("Y5")) {
-                    return DeviceType.Y5;
+                    return DeviceType.UNKNOWN;
                 }
             }
         } catch (Exception ex) {
@@ -63,7 +63,7 @@ public class Y5Coordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.Y5;
+        return DeviceType.UNKNOWN;
     }
 
     @Nullable

@@ -160,7 +160,7 @@ public class MakibesHR3Coordinator extends AbstractDeviceCoordinator {
 
         if (name != null) {
             if (deviceNames.contains(name)) {
-                return DeviceType.MAKIBESHR3;
+                return DeviceType.UNKNOWN;
             }
         }
 
@@ -201,7 +201,7 @@ public class MakibesHR3Coordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.MAKIBESHR3;
+        return DeviceType.UNKNOWN;
     }
 
     @Nullable

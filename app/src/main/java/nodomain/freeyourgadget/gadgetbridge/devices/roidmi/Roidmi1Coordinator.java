@@ -37,7 +37,7 @@ public class Roidmi1Coordinator extends RoidmiCoordinator {
             String name = device.getName();
 
             if (name != null && name.contains("睿米车载蓝牙播放器")) {
-                return DeviceType.ROIDMI;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);
@@ -48,6 +48,6 @@ public class Roidmi1Coordinator extends RoidmiCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.ROIDMI;
+        return DeviceType.UNKNOWN;
     }
 }

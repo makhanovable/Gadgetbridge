@@ -39,7 +39,7 @@ public class MiBand4Coordinator extends HuamiCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.MIBAND4;
+        return DeviceType.UNKNOWN;
     }
 
     @NonNull
@@ -49,7 +49,7 @@ public class MiBand4Coordinator extends HuamiCoordinator {
             BluetoothDevice device = candidate.getDevice();
             String name = device.getName();
             if (name != null && name.equalsIgnoreCase(HuamiConst.MI_BAND4_NAME)) {
-                return DeviceType.MIBAND4;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);

@@ -77,7 +77,7 @@ public class AmazfitCor2FirmwareInfo extends HuamiFirmwareInfo {
 
     @Override
     public boolean isGenerallyCompatibleWith(GBDevice device) {
-        return isHeaderValid() && device.getType() == DeviceType.AMAZFITCOR2;
+        return false;
     }
 
     @Override

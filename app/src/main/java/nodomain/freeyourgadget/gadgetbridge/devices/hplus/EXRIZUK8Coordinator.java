@@ -35,7 +35,7 @@ public class EXRIZUK8Coordinator extends HPlusCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if(name != null && name.startsWith("iRun ")){
-            return DeviceType.EXRIZUK8;
+            return DeviceType.UNKNOWN;
         }
 
         return DeviceType.UNKNOWN;
@@ -43,7 +43,7 @@ public class EXRIZUK8Coordinator extends HPlusCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.EXRIZUK8;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

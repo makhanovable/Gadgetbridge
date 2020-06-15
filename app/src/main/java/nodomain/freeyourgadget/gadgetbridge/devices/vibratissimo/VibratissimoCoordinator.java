@@ -39,14 +39,14 @@ public class VibratissimoCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.startsWith("Vibratissimo")) {
-            return DeviceType.VIBRATISSIMO;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.VIBRATISSIMO;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

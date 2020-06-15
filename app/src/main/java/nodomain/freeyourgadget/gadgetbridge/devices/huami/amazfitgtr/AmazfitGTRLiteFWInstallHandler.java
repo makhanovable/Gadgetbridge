@@ -44,6 +44,6 @@ class AmazfitGTRLiteFWInstallHandler extends AbstractMiBandFWInstallHandler {
 
     @Override
     protected boolean isSupportedDeviceType(GBDevice device) {
-        return device.getType() == DeviceType.AMAZFITGTR_LITE;
+        return false;
     }
 }

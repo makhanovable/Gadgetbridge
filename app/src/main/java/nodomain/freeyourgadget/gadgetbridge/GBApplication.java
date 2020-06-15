@@ -79,9 +79,6 @@ import nodomain.freeyourgadget.gadgetbridge.util.GBPrefs;
 import nodomain.freeyourgadget.gadgetbridge.util.LimitedQueue;
 import nodomain.freeyourgadget.gadgetbridge.util.Prefs;
 
-import static nodomain.freeyourgadget.gadgetbridge.model.DeviceType.AMAZFITBIP;
-import static nodomain.freeyourgadget.gadgetbridge.model.DeviceType.AMAZFITCOR;
-import static nodomain.freeyourgadget.gadgetbridge.model.DeviceType.AMAZFITCOR2;
 import static nodomain.freeyourgadget.gadgetbridge.model.DeviceType.MIBAND;
 import static nodomain.freeyourgadget.gadgetbridge.model.DeviceType.MIBAND2;
 import static nodomain.freeyourgadget.gadgetbridge.model.DeviceType.MIBAND3;
@@ -721,20 +718,6 @@ public class GBApplication extends Application {
 
                         DeviceType deviceType = fromKey(dbDevice.getType());
 
-                        if (deviceType == AMAZFITBIP || deviceType == AMAZFITCOR || deviceType == AMAZFITCOR2) {
-                            int oldLanguage = prefs.getInt("amazfitbip_language", -1);
-                            newLanguage = "auto";
-                            String[] oldLanguageLookup = {"zh_CN", "zh_TW", "en_US", "es_ES", "ru_RU", "de_DE", "it_IT", "fr_FR", "tr_TR"};
-                            if (oldLanguage >= 0 && oldLanguage < oldLanguageLookup.length) {
-                                newLanguage = oldLanguageLookup[oldLanguage];
-                            }
-                        }
-
-                        if (deviceType == AMAZFITBIP || deviceType == AMAZFITCOR) {
-                            deviceSharedPrefsEdit.putString("disconnect_notification", prefs.getString("disconnect_notification", "off"));
-                            deviceSharedPrefsEdit.putString("disconnect_notification_start", prefs.getString("disconnect_notification_start", "8:00"));
-                            deviceSharedPrefsEdit.putString("disconnect_notification_end", prefs.getString("disconnect_notification_end", "22:00"));
-                        }
                         if (deviceType == MIBAND2 || deviceType == MIBAND3) {
                             deviceSharedPrefsEdit.putString("do_not_disturb", prefs.getString("mi2_do_not_disturb", "off"));
                             deviceSharedPrefsEdit.putString("do_not_disturb_start", prefs.getString("mi2_do_not_disturb_start", "1:00"));
@@ -749,12 +732,6 @@ public class GBApplication extends Application {
                             case MIBAND:
                                 deviceSharedPrefsEdit.putBoolean("low_latency_fw_update", prefs.getBoolean("mi_low_latency_fw_update", true));
                                 deviceSharedPrefsEdit.putString("device_time_offset_hours", String.valueOf(prefs.getInt("mi_device_time_offset_hours", 0)));
-                                break;
-                            case AMAZFITCOR:
-                                displayItems = prefs.getStringSet("cor_display_items", null);
-                                break;
-                            case AMAZFITBIP:
-                                displayItems = prefs.getStringSet("bip_display_items", null);
                                 break;
                             case MIBAND2:
                                 displayItems = prefs.getStringSet("mi2_display_items", null);
@@ -843,26 +820,10 @@ public class GBApplication extends Application {
                         String newOrientation = null;
                         String newTimeformat = null;
                         switch (deviceType) {
-                            case AMAZFITBIP:
-                            case AMAZFITCOR:
-                            case AMAZFITCOR2:
                             case MIBAND:
                             case MIBAND2:
                             case MIBAND3:
-                            case MIBAND4:
                                 newWearside = prefs.getString("mi_wearside", "left");
-                                break;
-                            case HPLUS:
-                                newWearside = prefs.getString("hplus_wrist", "left");
-                                newTimeformat = prefs.getString("hplus_timeformat", "24h");
-                                break;
-                            case ID115:
-                                newWearside = prefs.getString("id115_wrist", "left");
-                                newOrientation = prefs.getString("id115_screen_orientation", "horizontal");
-                                break;
-                            case ZETIME:
-                                newWearside = prefs.getString("zetime_wrist", "left");
-                                newTimeformat = prefs.getInt("zetime_timeformat", 1) == 2 ? "am/pm" : "24h";
                                 break;
                         }
                         if (newWearside != null) {

@@ -89,7 +89,7 @@ public class MiBand4FirmwareInfo extends HuamiFirmwareInfo {
 
     @Override
     public boolean isGenerallyCompatibleWith(GBDevice device) {
-        return isHeaderValid() && device.getType() == DeviceType.MIBAND4;
+        return false;
     }
 
     @Override

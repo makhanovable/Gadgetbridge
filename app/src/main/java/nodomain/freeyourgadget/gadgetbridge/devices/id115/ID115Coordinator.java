@@ -60,7 +60,7 @@ public class ID115Coordinator extends AbstractDeviceCoordinator {
     @Override
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         if (candidate.supportsService(ID115Constants.UUID_SERVICE_ID115)) {
-            return DeviceType.ID115;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
@@ -72,7 +72,7 @@ public class ID115Coordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.ID115;
+        return DeviceType.UNKNOWN;
     }
 
     @Nullable

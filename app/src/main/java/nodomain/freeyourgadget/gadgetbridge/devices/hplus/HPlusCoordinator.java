@@ -78,7 +78,7 @@ public class HPlusCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.startsWith("HPLUS")) {
-            return DeviceType.HPLUS;
+            return DeviceType.UNKNOWN;
         }
 
         return DeviceType.UNKNOWN;
@@ -111,7 +111,7 @@ public class HPlusCoordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.HPLUS;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

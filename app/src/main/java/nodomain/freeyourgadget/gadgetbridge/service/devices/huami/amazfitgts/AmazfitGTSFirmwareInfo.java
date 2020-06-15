@@ -106,7 +106,7 @@ public class AmazfitGTSFirmwareInfo extends HuamiFirmwareInfo {
 
     @Override
     public boolean isGenerallyCompatibleWith(GBDevice device) {
-        return isHeaderValid() && device.getType() == DeviceType.AMAZFITGTS;
+        return false;
     }
 
     @Override

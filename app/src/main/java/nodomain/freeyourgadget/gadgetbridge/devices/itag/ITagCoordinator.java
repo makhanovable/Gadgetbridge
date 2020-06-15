@@ -40,14 +40,14 @@ public class ITagCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.toLowerCase().startsWith("itag")) { // All four: iTAG, iTag, ITAG and ITag exist
-            return DeviceType.ITAG;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.ITAG;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

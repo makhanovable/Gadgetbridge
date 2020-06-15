@@ -38,7 +38,7 @@ public class AmazfitGTRLiteCoordinator extends HuamiCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.AMAZFITGTR_LITE;
+        return DeviceType.UNKNOWN;
     }
 
     @NonNull
@@ -48,7 +48,7 @@ public class AmazfitGTRLiteCoordinator extends HuamiCoordinator {
             BluetoothDevice device = candidate.getDevice();
             String name = device.getName();
             if (name != null && name.equalsIgnoreCase("Amazfit GTR L")) {
-                return DeviceType.AMAZFITGTR_LITE;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);

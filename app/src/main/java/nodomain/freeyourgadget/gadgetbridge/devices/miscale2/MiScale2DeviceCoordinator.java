@@ -61,7 +61,7 @@ public class MiScale2DeviceCoordinator extends AbstractDeviceCoordinator {
             BluetoothDevice device = candidate.getDevice();
             String name = device.getName();
             if (name != null && name.equalsIgnoreCase("MIBCS")) {
-                return DeviceType.MISCALE2;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);
@@ -91,7 +91,7 @@ public class MiScale2DeviceCoordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.MISCALE2;
+        return DeviceType.UNKNOWN;
     }
 
     @Nullable

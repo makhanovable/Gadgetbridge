@@ -44,6 +44,6 @@ class AmazfitCor2FWInstallHandler extends AbstractMiBandFWInstallHandler {
 
     @Override
     protected boolean isSupportedDeviceType(GBDevice device) {
-        return device.getType() == DeviceType.AMAZFITCOR2;
+        return false;
     }
 }

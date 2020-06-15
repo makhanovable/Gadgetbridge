@@ -52,7 +52,7 @@ public class QHybridCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         for(ParcelUuid uuid : candidate.getServiceUuids()){
             if(uuid.getUuid().toString().equals("3dda0001-957f-7d4a-34a6-74696673696d")){
-                return DeviceType.FOSSILQHYBRID;
+                return DeviceType.UNKNOWN;
             }
         }
         return DeviceType.UNKNOWN;
@@ -67,7 +67,7 @@ public class QHybridCoordinator extends AbstractDeviceCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.FOSSILQHYBRID;
+        return DeviceType.UNKNOWN;
     }
 
     @Nullable
@@ -80,7 +80,7 @@ public class QHybridCoordinator extends AbstractDeviceCoordinator {
     @Override
     public boolean supportsActivityDataFetching() {
         GBDevice connectedDevice = GBApplication.app().getDeviceManager().getSelectedDevice();
-        return connectedDevice != null && connectedDevice.getType() == DeviceType.FOSSILQHYBRID && connectedDevice.getState() == GBDevice.State.INITIALIZED;
+        return connectedDevice != null && connectedDevice.getType() == DeviceType.UNKNOWN && connectedDevice.getState() == GBDevice.State.INITIALIZED;
     }
 
     @Override
@@ -114,7 +114,7 @@ public class QHybridCoordinator extends AbstractDeviceCoordinator {
 
     private boolean supportsAlarmConfiguration() {
         GBDevice connectedDevice = GBApplication.app().getDeviceManager().getSelectedDevice();
-        if(connectedDevice == null || connectedDevice.getType() != DeviceType.FOSSILQHYBRID || connectedDevice.getState() != GBDevice.State.INITIALIZED){
+        if(connectedDevice == null || connectedDevice.getType() != DeviceType.UNKNOWN || connectedDevice.getState() != GBDevice.State.INITIALIZED){
             return false;
         }
         return true;
@@ -173,7 +173,7 @@ public class QHybridCoordinator extends AbstractDeviceCoordinator {
     @Override
     public boolean supportsFindDevice() {
         GBDevice connectedDevice = GBApplication.app().getDeviceManager().getSelectedDevice();
-        if(connectedDevice == null || connectedDevice.getType() != DeviceType.FOSSILQHYBRID){
+        if(connectedDevice == null){
             return true;
         }
         ItemWithDetails vibration = connectedDevice.getDeviceInfo(QHybridSupport.ITEM_EXTENDED_VIBRATION_SUPPORT);

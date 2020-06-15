@@ -44,6 +44,6 @@ class AmazfitBipFWInstallHandler extends AbstractMiBandFWInstallHandler {
 
     @Override
     protected boolean isSupportedDeviceType(GBDevice device) {
-        return device.getType() == DeviceType.AMAZFITBIP;
+        return device.getType() == DeviceType.UNKNOWN;
     }
 }

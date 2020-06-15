@@ -563,11 +563,8 @@ public class GBDevice implements Parcelable {
         }
         if (mFirmwareVersion2 != null) {
             // FIXME: This is ugly
-            if (mDeviceType == DeviceType.AMAZFITBIP) {
-                result.add(new GenericItem(DEVINFO_GPS_VER, mFirmwareVersion2));
-            } else {
+
                 result.add(new GenericItem(DEVINFO_HR_VER, mFirmwareVersion2));
-            }
         }
         if (mAddress != null) {
             result.add(new GenericItem(DEVINFO_ADDR, mAddress));

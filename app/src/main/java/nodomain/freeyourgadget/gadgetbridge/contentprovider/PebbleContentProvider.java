@@ -81,10 +81,7 @@ public class PebbleContentProvider extends ContentProvider {
                 pebbleKit = 1;
             }
             String fwString = "unknown";
-            if (mGBDevice != null && mGBDevice.getType() == DeviceType.PEBBLE && mGBDevice.isInitialized()) {
-                connected = 1;
-                fwString = mGBDevice.getFirmwareVersion();
-            }
+
             mc.addRow(new Object[]{connected, pebbleKit, pebbleKit, 3, 8, 2, fwString});
 
             return mc;

@@ -106,7 +106,7 @@ public class AmazfitBipSFirmwareInfo extends HuamiFirmwareInfo {
 
     @Override
     public boolean isGenerallyCompatibleWith(GBDevice device) {
-        return isHeaderValid() && device.getType() == DeviceType.AMAZFITBIPS;
+        return false;
     }
 
     @Override

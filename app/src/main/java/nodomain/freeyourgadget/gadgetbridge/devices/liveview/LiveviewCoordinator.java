@@ -39,14 +39,14 @@ public class LiveviewCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.startsWith("LiveView")) {
-            return DeviceType.LIVEVIEW;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.LIVEVIEW;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

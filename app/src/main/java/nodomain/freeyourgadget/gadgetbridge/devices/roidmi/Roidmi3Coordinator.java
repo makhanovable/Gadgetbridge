@@ -37,7 +37,7 @@ public class Roidmi3Coordinator extends RoidmiCoordinator {
             String name = device.getName();
 
             if (name != null && name.contains("Roidmi Music Blue C")) {
-                return DeviceType.ROIDMI3;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);
@@ -48,7 +48,7 @@ public class Roidmi3Coordinator extends RoidmiCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.ROIDMI3;
+        return DeviceType.UNKNOWN;
     }
 
     @Override

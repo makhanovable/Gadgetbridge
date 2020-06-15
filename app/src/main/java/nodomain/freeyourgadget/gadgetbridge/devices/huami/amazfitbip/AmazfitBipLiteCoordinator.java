@@ -37,7 +37,7 @@ public class AmazfitBipLiteCoordinator extends AmazfitBipCoordinator {
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.AMAZFITBIP_LITE;
+        return DeviceType.UNKNOWN;
     }
 
     @NonNull
@@ -47,7 +47,7 @@ public class AmazfitBipLiteCoordinator extends AmazfitBipCoordinator {
             BluetoothDevice device = candidate.getDevice();
             String name = device.getName();
             if (name != null && name.equalsIgnoreCase("Amazfit Bip Lite")) {
-                return DeviceType.AMAZFITBIP_LITE;
+                return DeviceType.UNKNOWN;
             }
         } catch (Exception ex) {
             LOG.error("unable to check device support", ex);

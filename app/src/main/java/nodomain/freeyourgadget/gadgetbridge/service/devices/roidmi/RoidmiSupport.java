@@ -55,13 +55,6 @@ public class RoidmiSupport extends AbstractSerialDeviceSupport {
                     onSendConfiguration(RoidmiConst.ACTION_GET_FM_FREQUENCY);
                 }
 
-                if (getDevice().getType() == DeviceType.ROIDMI3) {
-                    if (getDevice().getBatteryVoltage() == -1) {
-                        infoMissing = true;
-
-                        onSendConfiguration(RoidmiConst.ACTION_GET_VOLTAGE);
-                    }
-                }
 
                 if (infoMissing) {
                     if (infoRequestTries < 6) {
@@ -91,11 +84,6 @@ public class RoidmiSupport extends AbstractSerialDeviceSupport {
 
     @Override
     protected GBDeviceProtocol createDeviceProtocol() {
-        if (getDevice().getType() == DeviceType.ROIDMI) {
-            return new Roidmi1Protocol(getDevice());
-        } else if (getDevice().getType() == DeviceType.ROIDMI3) {
-            return new Roidmi3Protocol(getDevice());
-        }
 
         LOG.error("Unsupported device type with key = " + getDevice().getType().getKey());
         return null;

@@ -48,7 +48,7 @@ public class BFH16DeviceCoordinator extends AbstractDeviceCoordinator
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.BFH16;
+        return DeviceType.UNKNOWN;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class BFH16DeviceCoordinator extends AbstractDeviceCoordinator
         String name = candidate.getDevice().getName();
         if (name != null) {
             if (name.startsWith("BFH-16")) {
-                return DeviceType.BFH16;
+                return DeviceType.UNKNOWN;
             }
         }
 

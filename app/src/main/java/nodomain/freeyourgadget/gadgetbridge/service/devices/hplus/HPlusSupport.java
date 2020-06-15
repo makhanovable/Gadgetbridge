@@ -138,10 +138,6 @@ public class HPlusSupport extends AbstractBTLEDeviceSupport {
 
     private HPlusSupport syncPreferences(TransactionBuilder transaction) {
 
-        if (deviceType == DeviceType.HPLUS || deviceType == DeviceType.EXRIZUK8) {
-            setSIT(transaction);          //Sync SIT Interval
-        }
-
         setCurrentDate(transaction);
         setCurrentTime(transaction);
         setDayOfWeek(transaction);
@@ -236,9 +232,6 @@ public class HPlusSupport extends AbstractBTLEDeviceSupport {
 
         //Makibes F68 doesn't like this command.
         //Just ignore.
-        if (deviceType == DeviceType.MAKIBESF68) {
-            return this;
-        }
 
         int startTime = HPlusCoordinator.getSITStartTime(getDevice().getAddress());
         int endTime = HPlusCoordinator.getSITEndTime(getDevice().getAddress());

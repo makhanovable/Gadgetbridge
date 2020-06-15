@@ -63,7 +63,7 @@ public class PBWInstallHandler implements InstallHandler {
             installActivity.setInstallEnabled(false);
             return;
         }
-        if (device.getType() != DeviceType.PEBBLE || !device.isConnected()) {
+        if (device.getType() != DeviceType.UNKNOWN || !device.isConnected()) {
             installActivity.setInfoText("Element cannot be installed");
             installActivity.setInstallEnabled(false);
             return;

@@ -42,7 +42,7 @@ import nodomain.freeyourgadget.gadgetbridge.model.DeviceType;
 public class ZeTimeCoordinator extends AbstractDeviceCoordinator {
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.ZETIME;
+        return DeviceType.UNKNOWN;
     }
 
     @NonNull
@@ -56,7 +56,7 @@ public class ZeTimeCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.startsWith("ZeTime")) {
-            return DeviceType.ZETIME;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }

@@ -91,29 +91,16 @@ public class ExternalPebbleJSActivity extends AbstractGBActivity {
                 List<GBDevice> deviceList = deviceManager.getDevices();
                 for (GBDevice device : deviceList) {
                     if (device.getState() == GBDevice.State.INITIALIZED) {
-                        if (device.getType().equals(DeviceType.PEBBLE)) {
-                            currentDevice = device;
-                            break;
-                        } else {
+
                             LOG.error("attempting to load pebble configuration but a different device type is connected!!!");
                             finish();
                             return;
-                        }
+
                     }
                 }
                 if (currentDevice == null) {
                     //then try to reconnect to last connected device
-                    String btDeviceAddress = GBApplication.getPrefs().getPreferences().getString("last_device_address", null);
-                    if (btDeviceAddress != null) {
-                        GBDevice candidate = DeviceHelper.getInstance().findAvailableDevice(btDeviceAddress, this);
-                        if(!candidate.isConnected() && candidate.getType() == DeviceType.PEBBLE){
-                            Intent intent = new Intent(this, DeviceCommunicationService.class)
-                                    .setAction(ACTION_CONNECT)
-                                    .putExtra(GBDevice.EXTRA_DEVICE, currentDevice);
-                            this.startService(intent);
-                            currentDevice = candidate;
-                        }
-                    }
+
                 }
 
                 showConfig = true; //we are getting incoming configuration data

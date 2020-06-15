@@ -51,14 +51,14 @@ public class PebbleCoordinator extends AbstractDeviceCoordinator {
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
         if (name != null && name.startsWith("Pebble")) {
-            return DeviceType.PEBBLE;
+            return DeviceType.UNKNOWN;
         }
         return DeviceType.UNKNOWN;
     }
 
     @Override
     public DeviceType getDeviceType() {
-        return DeviceType.PEBBLE;
+        return DeviceType.UNKNOWN;
     }
 
     @Override
